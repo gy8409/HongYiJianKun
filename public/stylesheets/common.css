@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+img {
+    border: 0;
+}
+
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style: none; }
+
+body {
+    background: #f1f2eb;
+    font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+    color: #828c8f;
+    min-width: 960px;
+}
+
+h1 {
+    font-size: 1.5em;
+    line-height: 1.8em;
+    border-bottom: 0.1em solid #eee;
+}
+
+h2 {
+    font-size: 1em;
+    line-height: 1.8em;
+    border-bottom: 0.1em solid #eee;
+    color: #afb0a8;
+}
+
+p {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    color: #434c52;
+}
+
+.topWrapper {
+    height: 8em;
+    background: #b2bcc0;
+    border-top: 0.5em solid #707f89;
+}
+
+.logo a {
+    font-size: 4em;
+    text-decoration: none;
+    color: #707f89;
+    margin-left: 1em;
+    line-height: 2em;
+}
+
+.logo {
+    float: left;
+    width: 30%;
+}
+
+.navBar {
+    height: 3em;
+    /* background: -webkit-gradient(linear, 0 0, 0 100%,  from(#707f89), to(black)); */
+    /* background: -moz-linear-gradient(top, #707f89, Black); */
+    background: #707f89;
+    margin-left: 31%;
+margin-top: 5.3%;
+    padding-left: 0;
+    border-bottom: 0.3em solid white;
+}
+
+.navBar li {
+    float: left;
+}
+
+/* .navBar:first-Child { */
+/*     margin-left: 3em; */
+/* } */
+
+.navBar a {
+    text-decoration: none;
+    color: #e0e4e6;
+    
+    display: block;
+    height: 3em;
+    line-height: 3em;
+
+    width: 6em;
+    text-align: center;
+
+    border-right: 0.1em solid #ccc;
+}
+
+.navBar li:last-Child a {
+    border-right: 0;
+}
+
+.navBar a:hover {
+    background: #707f89;
+    color: #fff;
+}
+
+.mainWrapper {
+    clear: both;
+    max-width: 1024px;
+    margin: 1em auto;
+}
+
+.news {
+    float: left;
+    width: 25%;
+    border: 0.1em solid #eee;
+    background: #fff;
+    padding: 2em 1em;
+}
+
+.followUs {
+    float: right;
+    width: 18%;
+    boder: 0.1em solid #eee;
+    background: #fff;
+    padding: 2em 1em;
+}
+
+.followUs ul {
+    padding: 0;
+}
+
+.followUs .personIcon {
+    float: left;
+    border: 0.1em solid #;
+}
+
+.followUs img {
+    width: 4em;
+    height: 4em;
+}
+
+.followUs .personInfo {
+    margin: 1em 5em;
+}
+
+.followUs .personInfo a{
+    text-decoration: none;
+}
+
+.innerWrapper {
+    margin-left: 29.4%;
+    margin-right: 22.3%;
+    background: #e0e4e6;
+}
+
+.services {
+    padding: 2em 1em;
+}
+
+.services ul {
+    padding: 0 1em;
+}
+
+.services ul li {
+    margin: 1em;
+}
+
+.products {
+    padding: 0 1em 2em 1em;
+}
+
+.products h2 {
+    margin-left: 1em;
+}
+
+.bottomBar {
+    height: 6em;
+    /* background: -webkit-gradient(linear, 0 0, 0 100%, from(Black), to(Gray)); */
+    /* background: -moz-linear-gradient(top, Black, Gray); */
+    background: #828c8f;
+    color: #fff;
+    text-align: center;
+    clear: both;
+}
+
