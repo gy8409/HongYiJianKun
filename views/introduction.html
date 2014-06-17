@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}弘毅健坤-公司简介{% endblock %}
+
+{% block head %}
+{% parent %}
+<link rel="stylesheet" href="/stylesheets/sidebar.css" type="text/css">
+{% endblock %}
+
+{% block content %}
+<ul class="sidebar">
+    <li><a href="introduction">公司简介</a></li>
+    <li><a href="milestone">里程碑</a></li>
+    <li><a href="team">团队</a></li>
+</ul>
+{% endblock %}

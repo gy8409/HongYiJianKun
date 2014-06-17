@@ -14,7 +14,7 @@ module.exports = {
 	res.render('introduction');
     },
     getServices: function(req, res) {
-	res.render('services', {siderbar: sidemenu});
+	res.render('services', {sidebar: sidemenu});
     },
     getCareer: function(req, res) {
 	res.render('career');

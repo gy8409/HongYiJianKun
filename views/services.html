@@ -2,6 +2,11 @@
 
 {% block title %}Services{% endblock %}
 
+{% block head %}
+{% parent %}
+<link rel="stylesheet" href="/stylesheets/sidebar.css" type="text/css">
+{% endblock %}
+
 {% block content %}
 
 {% include "./sidebar.html" %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
     <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="keyword" content="弘毅健坤（北京）科技有限公司" />
@@ -10,6 +10,7 @@
 	{% block head %}
 	<link rel="stylesheet" href="/stylesheets/common.css" type="text/css" />
 	{% endblock %}
+
     </head>
 
     <body>
@@ -23,15 +24,15 @@
 		<li><a>&nbsp;</a></li>
 		<li><a href="index">首页</a></li>
 		<li><a href="introduction">公司简介</a></li>
-		<li><a href="services">产品展示</a></li>
+		<li><a href="services">服务</a></li>
 		<li><a href="career">求贤纳士</a></li>
 		<li><a href="contact">联系我们</a></li>
 	    </ul>
 	</div>
 
 	<div class="mainWrapper">
-	    {% block content %}
-	    {% endblock%}
+	    {% block sidebar %}{% endblock %}
+	    {% block content %}{% endblock%}
 	</div>
 
 	<div class="bottomBar">

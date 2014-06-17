@@ -1,0 +1,24 @@
+.sidebar {
+    float: left;
+    width: 11em;
+    border-right: 0.1em solid #ccc;
+    padding: 2em;
+    /* line-height: 2em; */
+}
+
+.sidebar li {
+    padding: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #707f89;
+}
+
+.sidebar a:hover {
+    margin: 0;
+    background-color: #707f89;
+    color: #E0E4E6;
+}
