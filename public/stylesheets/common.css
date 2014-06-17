@@ -40,8 +40,10 @@ p {
 
 .topWrapper {
     height: 8em;
-    background: #b2bcc0;
+    background: url("/images/icon.jpg") no-repeat right bottom;
+    background-size: cover;
     border-top: 0.5em solid #707f89;
+    position: relative;
 }
 
 .logo a {
@@ -52,18 +54,13 @@ p {
     line-height: 2em;
 }
 
-.logo {
-    float: left;
-    width: 30%;
-}
-
 .navBar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     height: 3em;
-    /* background: -webkit-gradient(linear, 0 0, 0 100%,  from(#707f89), to(black)); */
-    /* background: -moz-linear-gradient(top, #707f89, Black); */
     background: #707f89;
-    margin-left: 31%;
-margin-top: 5.3%;
+
     padding-left: 0;
     border-bottom: 0.3em solid white;
 }
