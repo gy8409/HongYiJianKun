@@ -8,18 +8,18 @@ var sidemenu = [
 
 module.exports = {
     getIndex: function(req, res) {
-	res.render('index', {sidebar: sidemenu});
+	res.render('index', {sidebar: sidemenu, bodyId: "index"});
     },
     getIntroduction: function(req, res) {
-	res.render('introduction');
+	res.render('introduction', {bodyId: "introduction"});
     },
     getServices: function(req, res) {
-	res.render('services', {sidebar: sidemenu});
+	res.render('services', {sidebar: sidemenu, bodyId: "services"});
     },
     getCareer: function(req, res) {
-	res.render('career');
+	res.render('career', {bodyId: "career"});
     },
     getContact: function(req, res) {
-	res.render('contact');
+	res.render('contact', {bodyId: "contact"});
     }
 }

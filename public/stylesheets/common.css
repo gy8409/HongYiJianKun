@@ -62,16 +62,20 @@ p {
     background: #707f89;
 
     padding-left: 0;
-    border-bottom: 0.3em solid white;
 }
 
 .navBar li {
     float: left;
 }
 
-/* .navBar:first-Child { */
-/*     margin-left: 3em; */
-/* } */
+#index a#indexLink,
+#introduction a#introductionLink,
+#services a#servicesLink,
+#career a#careerLink,
+#contact a#contactLink {
+    background: #f1f2eb;
+    color: #707f89;
+}
 
 .navBar a {
     text-decoration: none;
