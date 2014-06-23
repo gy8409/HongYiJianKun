@@ -60,8 +60,7 @@ p {
     bottom: 0;
     height: 3em;
     background: #707f89;
-
-    padding-left: 0;
+    margin-bottom: 0;
 }
 
 .navBar li {
