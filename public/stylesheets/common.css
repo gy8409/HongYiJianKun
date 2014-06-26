@@ -54,6 +54,16 @@ p {
     line-height: 2em;
 }
 
+.sign {
+    position: absolute;
+    top: 0;
+    right: 2em;
+}
+
+.modal-body input {
+    margin-top: 1em;
+}
+
 .navBar {
     position: absolute;
     right: 0;
@@ -88,10 +98,6 @@ p {
     text-align: center;
 
     border-right: 0.1em solid #ccc;
-}
-
-.navBar li:last-Child a {
-    border-right: 0;
 }
 
 .navBar a:hover {

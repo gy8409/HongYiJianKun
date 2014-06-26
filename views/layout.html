@@ -13,6 +13,14 @@
 	<link rel="stylesheet" href="/stylesheets/common.css" type="text/css" />
 	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+	<script>
+	 $(document).ready(function (){
+	     $('#signin').click(function (){
+		 $('.modal').modal('hide');
+	     });
+	 });
+	</script>
 	{% endblock %}
 
     </head>
@@ -20,9 +28,37 @@
     <body id={{ bodyId }}>
 	<div class="topWrapper">
 	    <div class="logo">
-		<!-- TODO: -->
 		<a href="/">弘毅健坤</a>
-	    </div>	
+	    </div>
+	    <div class="sign">
+		<a href="#" data-toggle="modal" data-target="" class="btn btn-link">注册</a>
+		|
+		<a href="#" data-toggle="modal" data-target="#signinModal" class="btn btn-link">登录</a>
+	    </div>
+	    <!-- sign up modal -->
+	    <div class="modal fade" id="signinModal" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+			<div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h4 class="modalTitle" id="modalLabel">登录</h4>
+			</div>
+			<div class="modal-body">
+			    <form class="form-group">
+				<input type="text" class="form-control" placeholder="邮箱" />
+				<input type="password" class="form-control" placeholder="密码" />
+				
+			    </form>
+			</div>
+			<div class="modal-footer">
+			    <button type="" class="btn btn-link">忘记密码</button>
+			    <button id="signin" type="submit" class="btn btn-default">登录</button>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	    <!-- end of sign up modal -->
+
 	    <ul class="navBar">
 		<li><a>&nbsp;</a></li>
 		<li><a href="index" id="indexLink">首页</a></li>
@@ -31,13 +67,12 @@
 		<li><a href="career" id="careerLink">求贤纳士</a></li>
 		<li><a href="contact" id="contactLink">联系我们</a></li>
 		<li>
-		<form role="search" style="width: 15em; margin: 0.3em 2em;">
-		    <div class="input-group">
-			<input type="text" class="form-control" placeholder="Search">
-			<div class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
-		    </div>
-		    
-		</form>	
+		    <form role="search" style="width: 15em; margin: 0.3em 2em;">
+			<div class="input-group">
+			    <input type="text" class="form-control" placeholder="Search" />
+			    <div class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
+			</div>
+		    </form>	
 		</li>
 	    </ul>
 	</div>
