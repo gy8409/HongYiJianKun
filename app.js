@@ -31,6 +31,7 @@ app.get('/introduction', routes.getIntroduction);
 app.get('/services', routes.getServices);
 app.get('/career', routes.getCareer);
 app.get('/contact', routes.getContact);
+app.post('/signup', routes.signup);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

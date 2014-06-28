@@ -1,3 +1,5 @@
+var utility = require('../public/javascripts/utility');
+
 var sidemenu = [
 	    {source: "", innerHTML: "应用开发和维护"},
 	    {source: "", innerHTML: "ERP实施与咨询"},
@@ -21,5 +23,11 @@ module.exports = {
     },
     getContact: function(req, res) {
 	res.render('contact', {bodyId: "contact"});
+    },
+    signup: function(req, res) {
+	utility.createUser(req.body.email, req.body.email, req.body.password, function(err, user) {
+	    console.log(user);
+	    res.redirect('/');
+	});
     }
 }

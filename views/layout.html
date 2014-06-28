@@ -31,33 +31,58 @@
 		<a href="/">弘毅健坤</a>
 	    </div>
 	    <div class="sign">
-		<a href="#" data-toggle="modal" data-target="" class="btn btn-link">注册</a>
+		<a href="#" data-toggle="modal" data-target="#signupModal" class="btn btn-link">注册</a>
 		|
-		<a href="#" data-toggle="modal" data-target="#signinModal" class="btn btn-link">登录</a>
+		<a href="#" data-toggle="modal" data-target="#loginModal" class="btn btn-link">登录</a>
 	    </div>
-	    <!-- sign up modal -->
-	    <div class="modal fade" id="signinModal" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-		    <div class="modal-content">
-			<div class="modal-header">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h4 class="modalTitle" id="modalLabel">登录</h4>
-			</div>
-			<div class="modal-body">
-			    <form class="form-group">
-				<input type="text" class="form-control" placeholder="邮箱" />
-				<input type="password" class="form-control" placeholder="密码" />
-				
-			    </form>
-			</div>
-			<div class="modal-footer">
-			    <button type="" class="btn btn-link">忘记密码</button>
-			    <button id="signin" type="submit" class="btn btn-default">登录</button>
+	    <!-- signup modal -->
+	    <div class="modal fade" id="signupModal" role="dialog" aria-labelledby="smodalLabel" aria-hidden="true">
+		<form class="form-group" action="/signup" method="post">
+		    <div class="modal-dialog">
+			<div class="modal-content">
+			    <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modalTitle" id="smodalLabel">注册</h4>
+			    </div>
+			    <div class="modal-body">
+				<input type="text" name="username" class="form-control" placeholder="用户名" />
+				<input type="text" name="email" class="form-control" placeholder="邮箱" />
+				<input type="password" name="password" class="form-control" placeholder="密码" />
+				<input type="password" class="form-control" placeholder="再次输入密码" />
+			    </div>
+			    <div class="modal-footer">
+				<button id="signup" type="submit" class="btn btn-default">注册</button>
+			    </div>
 			</div>
 		    </div>
-		</div>
+		</form>
 	    </div>
-	    <!-- end of sign up modal -->
+	    <!-- end of signup modal -->	
+	    
+	    <!-- login modal -->
+	    <div class="modal fade" id="loginModal" role="dialog" aria-labelledby="lmodalLabel" aria-hidden="true">
+		<form class="form-group" action="/login" method="post">
+		    <div class="modal-dialog">
+			<div class="modal-content">
+			    <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modalTitle" id="lmodalLabel">登录</h4>
+			    </div>
+			    <div class="modal-body">
+				
+				<input type="text" class="form-control" placeholder="邮箱" />
+				<input type="password" class="form-control" placeholder="密码" />
+
+			    </div>
+			    <div class="modal-footer">
+				<button type="" class="btn btn-link">忘记密码</button>
+				<button id="signin" type="submit" class="btn btn-default">登录</button>
+			    </div>
+			</div>
+		    </div>
+		</form>
+	    </div>
+	    <!-- end of login modal -->
 
 	    <ul class="navBar">
 		<li><a>&nbsp;</a></li>
@@ -67,7 +92,7 @@
 		<li><a href="career" id="careerLink">求贤纳士</a></li>
 		<li><a href="contact" id="contactLink">联系我们</a></li>
 		<li>
-		    <form role="search" style="width: 15em; margin: 0.3em 2em;">
+		    <form role="search" style="width: 15em; margin: 0.3em 2em;" method="post">
 			<div class="input-group">
 			    <input type="text" class="form-control" placeholder="Search" />
 			    <div class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
