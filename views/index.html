@@ -42,20 +42,7 @@
     </div>
     <div class="followUs">
 	<h1>关注我们</h1>
-	<ul>
-	    <a href="https://twitter.com/gy8409" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @gy8409</a>
-	    <div id="wb_follow_btn"></div>
-	    {% for item in persons  %}
-	    <div class="personIcon">
-		<a href={{ persons.ref }}><img src={{ persons.icon }}></img></a>
-	    </div>
-	    <div class="personInfo">
-		<a href={{ persons.ref }}><div class="name">{{ persons.name }}</div></a>
-		<div class="signature">{{ persons.signature }}</div>
-		<div class="followMe"></div>
-	    </div>
-	    {% endfor %}
-	</ul>
+	<a href="https://twitter.com/gy8409" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @gy8409</a>
     </div>
 
     <div class="innerWrapper">

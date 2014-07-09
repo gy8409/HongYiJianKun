@@ -111,12 +111,14 @@ p {
     margin: 0 auto;
 }
 
-.main {
-    margin: 1em auto;
+.main {    
+    position: relative;
 } 
 
 .news {
-    float: left;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 25%;
     border: 0.1em solid #eee;
     background: #fff;
@@ -124,39 +126,19 @@ p {
 }
 
 .followUs {
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 18%;
     boder: 0.1em solid #eee;
     background: #fff;
     padding: 2em 1em;
 }
 
-.followUs ul {
-    padding: 0;
-}
-
-.followUs .personIcon {
-    float: left;
-    border: 0.1em solid #;
-}
-
-.followUs img {
-    width: 4em;
-    height: 4em;
-}
-
-.followUs .personInfo {
-    margin: 1em 5em;
-}
-
-.followUs .personInfo a{
-    text-decoration: none;
-}
-
 .innerWrapper {
-    margin-left: 29.4%;
-    margin-right: 22.3%;
     background: #e0e4e6;
+    margin-left: 26%;
+    margin-right: 19%;
 }
 
 .services {
@@ -179,13 +161,13 @@ p {
     margin-left: 1em;
 }
 
-.bottomBar {
+.footer {
     height: 6em;
     /* background: -webkit-gradient(linear, 0 0, 0 100%, from(Black), to(Gray)); */
     /* background: -moz-linear-gradient(top, Black, Gray); */
     background: #828c8f;
     color: #fff;
     text-align: center;
-    clear: both;
+    margin-top: 1em;
 }
 
