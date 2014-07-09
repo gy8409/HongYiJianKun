@@ -111,56 +111,6 @@ p {
     margin: 0 auto;
 }
 
-.main {    
-    position: relative;
-} 
-
-.news {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 25%;
-    border: 0.1em solid #eee;
-    background: #fff;
-    padding: 2em 1em;
-}
-
-.followUs {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 18%;
-    boder: 0.1em solid #eee;
-    background: #fff;
-    padding: 2em 1em;
-}
-
-.innerWrapper {
-    background: #e0e4e6;
-    margin-left: 26%;
-    margin-right: 19%;
-}
-
-.services {
-    padding: 2em 1em;
-}
-
-.services ul {
-    padding: 0 1em;
-}
-
-.services ul li {
-    margin: 1em;
-}
-
-.products {
-    padding: 0 1em 2em 1em;
-}
-
-.products h2 {
-    margin-left: 1em;
-}
-
 .footer {
     height: 6em;
     /* background: -webkit-gradient(linear, 0 0, 0 100%, from(Black), to(Gray)); */
