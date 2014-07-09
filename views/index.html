@@ -50,7 +50,7 @@
 	    <h1>服务</h1>
 	    <ul>
 		{% for item in sidebar %}
-		<li><a href={{ item.source }}>{{ item.innerHTML }}</a></li>
+		<li><a href="{{ item.source }}" data-icon={{ item.icon }}>{{ item.innerHTML }}</a></li>
 		{% endfor %}
 	    </ul>
 	</div>

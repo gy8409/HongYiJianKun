@@ -1,11 +1,11 @@
 var utility = require('../public/javascripts/utility');
 
 var sidemenu = [
-	    {source: "", innerHTML: "应用开发和维护"},
-	    {source: "", innerHTML: "ERP实施与咨询"},
-	    {source: "", innerHTML: "软件全球化与本地化"},
-	    {source: "", innerHTML: "专业测试与性能"},
-	    {source: "", innerHTML: "前端解决方案"}
+	    {source: "", icon:"%", innerHTML: "应用开发和维护"},
+	    {source: "", icon:"!", innerHTML: "ERP实施与咨询"},
+	    {source: "", icon:"\'", innerHTML: "软件全球化与本地化"},
+	    {source: "", icon:"+", innerHTML: "专业测试与性能"},
+	    {source: "", icon:"$", innerHTML: "前端解决方案"}
 	];
 
 module.exports = {
