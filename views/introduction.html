@@ -15,7 +15,7 @@
 </style>
 <script>
  this.imagePreview = function () {
-     var movedY = 0;
+     var movedY = $('.sidebar').offset().top;
 
      $(".sidebar").mousemove(function (e) {
 	 movedY = e.pageY;
@@ -24,13 +24,13 @@
      setInterval(function() {
 	 moveHighlight(movedY);
      }, 250);
-};
+ };
 
  function moveHighlight(movedY) {
-var sidebarTop = $('.sidebar').offset().top;
-var sidebarHeight = $(".sidebar li").outerHeight();
+     var sidebarTop = $('.sidebar').offset().top;
+     var sidebarHeight = $(".sidebar li").outerHeight();
      var topValue = Math.floor((movedY - sidebarTop) / sidebarHeight) * sidebarHeight;
-     console.log('>>>this.top' + $('.sidebar').offset().top + '>>>>e.pageY' + movedY + '>>>topValue'+ topValue);
+     console.log('>>>sidebarTop ' + sidebarTop + '>>>>sidebarHeight' +sidebarHeight + '>>>>movedY ' + movedY + '>>>topValue'+ topValue);
      $("#highlight").css({
 	 top: topValue,
 	 transition: "top 0.5s",
