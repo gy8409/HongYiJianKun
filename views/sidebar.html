@@ -1,5 +1,9 @@
-<ul class="sidebar">
-    {% for item in sidebar %}
-    <li><a href={{ item.source }}>{{ item.innerHTML }}</a></li>
-    {% endfor %}
-</ul>
+<div class="sidebar_wrapper">
+    <div class="sidebar">
+	<ul>
+	    {% for item in sidebar %}
+	    <li><a href={{ item.source }}>{{ item.innerHTML }}</a></li>
+	    {% endfor %}
+	</ul>
+    </div>
+</div>

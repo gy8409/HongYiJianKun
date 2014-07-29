@@ -5,12 +5,78 @@
 {% block head %}
 {% parent %}
 <link rel="stylesheet" href="/stylesheets/sidebar.css" type="text/css">
+<link rel="stylesheet" href="/stylesheets/introduction.css" type="text/css">
+
+
+<style>
+ .hidden {
+     display: none;
+ }
+</style>
+<script>
+ this.imagePreview = function () {
+     var movedY = 0;
+
+     $(".sidebar").mousemove(function (e) {
+	 movedY = e.pageY;
+     });
+
+     setInterval(function() {
+	 moveHighlight(movedY);
+     }, 250);
+};
+
+ function moveHighlight(movedY) {
+var sidebarTop = $('.sidebar').offset().top;
+var sidebarHeight = $(".sidebar li").outerHeight();
+     var topValue = Math.floor((movedY - sidebarTop) / sidebarHeight) * sidebarHeight;
+     console.log('>>>this.top' + $('.sidebar').offset().top + '>>>>e.pageY' + movedY + '>>>topValue'+ topValue);
+     $("#highlight").css({
+	 top: topValue,
+	 transition: "top 0.5s",
+	 height: sidebarHeight + "px"
+     }).show();
+ }
+
+ // 页面加载完执行
+ $(document).ready(function () {
+     imagePreview();
+     $('.sidebar').append("<div id='highlight'></div>");
+     $('.content').addClass('hidden');
+     var a = $('.sidebar a:first-child').attr('href');
+     $(a).removeClass('hidden');
+     $('#highlight').css({
+	 top: $('.sidebar li:first-child').position().top,
+	 height: $(".sidebar li").outerHeight() + "px"});
+     $('.sidebar li').click(function(event) {
+	 var id_clicked = $('a', this).attr('href');
+	 $('.content').addClass('hidden');
+	 $(id_clicked).removeClass('hidden');
+     });
+
+ });
+</script>
 {% endblock %}
 
 {% block content %}
-<ul class="sidebar">
-    <li><a href="introduction">公司简介</a></li>
-    <li><a href="milestone">里程碑</a></li>
-    <li><a href="team">团队</a></li>
-</ul>
+<div class="main">
+    {% include 'sidebar.html' %}
+    <div class="content" id="summary">
+	<p>弘毅健坤成立于2012年，公司致力于提供优质的管理咨询、信息技术、和外包服务。凭借丰富的行业经验和在本土市场的成功实践，弘毅健坤帮助客户明确战略，优化流程，集成系统，引进创新，提高整体竞争优势, 成为绩效卓越的组织。</p>
+	<p>弘毅健坤的客户服务团队由各类专业人员组成，他们包括：行业专家、能力专家、以及熟悉当地市场的专业人员。此外，弘毅健坤交付中心的专业人员协助客户服务团队，利用严谨的方法论和先进技术为客户提供迅速可靠、经济有效的解决方案。</p>
+	<p>弘毅健坤每年将大量资金投入到研发领域。利用这些研发投资，帮助客户制定创新业务战略和技术，将其商业化并加以推广，并为客户开发市场化的解决方案。弘毅健坤的研究和创新项目旨在向客户提供制定创新解决方案的前瞻性洞察力，并为客户制定以高绩效企业为目标的战略。</p>
+	<p>弘毅健坤的独特优势在于：既能够为客户设计制胜战略，又具有强大的实施能力帮助客户实现其战略愿景。弘毅健坤在中国的项目涵盖了广泛的行业和各种类型的解决方案。弘毅健坤为大型的国有企业提供企业转型的咨询和服务，帮助它们转变成更加以市场为导向的企业。弘毅健坤还为客户提供组织架构重组或人员绩效管理方面的咨询服务。此外，在电子商务和信息系统咨询服务领域，弘毅健坤在中国市场也一直占据一席之地。</p>
+    </div>
+    <div class="content" id="milestone">
+	<p>TODO: 2013年获全国优秀企业称号。</p>
+	<p>TODO: 2014年获优秀企业家。</p>
+	<p>TODO: 2015年进入优秀环保企业名录。</p>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <div class="content" id="team">
+	<p> TODO: 我们拥有最优秀的团队，。。。。。。</p>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
+
 {% endblock %}
