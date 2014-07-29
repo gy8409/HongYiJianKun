@@ -30,7 +30,7 @@
      var sidebarTop = $('.sidebar').offset().top;
      var sidebarHeight = $(".sidebar li").outerHeight();
      var topValue = Math.floor((movedY - sidebarTop) / sidebarHeight) * sidebarHeight;
-     console.log('>>>sidebarTop ' + sidebarTop + '>>>>sidebarHeight' +sidebarHeight + '>>>>movedY ' + movedY + '>>>topValue'+ topValue);
+     
      $("#highlight").css({
 	 top: topValue,
 	 transition: "top 0.5s",
@@ -42,6 +42,7 @@
  $(document).ready(function () {
      imagePreview();
      $('.sidebar').append("<div id='highlight'></div>");
+ 
      $('.content').addClass('hidden');
      var a = $('.sidebar a:first-child').attr('href');
      $(a).removeClass('hidden');
