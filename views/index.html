@@ -5,9 +5,6 @@
 {% block head %}
 {% parent %}
 <link rel="stylesheet" href="../stylesheets/index.css">
-<script src="../javascripts/responsive.js"></script>
-<script src="../javascripts/index.js"></script>
-
 {% endblock %}
 
 {% block content %}
@@ -62,4 +59,12 @@
 	</div>
     </div>
 </div>
+{% endblock %}
+
+{% block script %}
+{% parent %}
+
+<script src="../javascripts/responsive.js"></script>
+<script src="../javascripts/index.js"></script>
+<script src="../javascripts/signup.js"></script>
 {% endblock %}

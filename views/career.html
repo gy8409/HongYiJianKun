@@ -1,1 +1,122 @@
 {% extends 'layout.html' %}
+
+
+{% block script %}
+{% parent %}
+<script>
+ var net = new Object();
+
+ net.READYSTATE_UNINITIALIZED = 0;
+ net.READYSTATE_LOADING = 1;
+ net.READYSTATE_LOADED = 2;
+ net.READYSTATE_INTERACTIVE = 3;
+ net.READYSTATE_COMPLETE = 4;
+
+ net.ContentLoader = function (url, onload, onerror) {
+     this.url = url;
+     this.req = null;
+     this.onload = onload;
+     this.onerror = (onerror) ? onerror : this.defaultError;
+     this.loadJson(url);
+ };
+
+ net.ContentLoader.prototype = {
+     loadJson: function (url) {
+	 console.log('>>>loadJson >> url:' + url);
+	 this.req = new XMLHttpRequest();
+	 var loader = this;
+	 this.req.onreadystatechange = function () {
+	     loader.onReadyState.call(loader);
+	 };
+	 this.req.open('GET', url, true);
+	 this.req.responseType = "text";
+	 this.req.send(null);
+     },
+     onReadyState: function () {
+	 console.log('>>>onReadyState');
+	 var req = this.req;
+	 var ready = req.readyState;
+	 if (ready = net.READYSTATE_COMPLETE) {
+	     var httpStatus = req.status;
+	     if (httpStatus == 200 || httpStatus == 0) {
+		 this.onload.call(this, this.req.responseText);
+	     }
+	 }
+     }
+ };
+
+$(document).ready(function() {
+ $("select[name='city']").on("change", function() {
+     var city = $("select[name='city'] option:selected").val();
+     var queryParams = "?" + "city=" + city;
+     var loader = new net.ContentLoader('career/form'+queryParams, FillDistrict, null);
+})
+ });
+
+ function FillDistrict(string) {
+     console.log('>>>FillDistrict' + string);
+
+     $("select[name='District']").empty().append(string);
+ }
+
+$(document).ready(function() {
+ var canvas = document.getElementById('pieChart');
+ var context = canvas.getContext('2d');
+ context.fillStyle = '#FF0000';
+ context.fillRect(10,10, 80, 80);
+ context.lineWidth = 1;
+ context.strokeStyle = "#000000";
+ context.strokeRect(10, 10, 80, 80);
+
+ var x = 190;
+ var y = 170;
+ var radius = 100;
+ var percentage1 = 0.5;
+ var percentage2 = 0.2;
+ context.beginPath();
+ context.moveTo(x, y);
+ context.lineTo(x, y - radius);
+ context.arc(x, y, radius, 1.5*Math.PI, percentage1*2*Math.PI + 1.5*Math.PI);
+ context.closePath();
+ context.stroke();
+ context.fillStyle = "#FF0000";
+ context.fill();
+
+ context.beginPath();
+ context.moveTo(x, y);
+ context.lineTo(x, y - radius);
+ context.arc(x, y, radius, 1.5*Math.PI, 1.5*Math.PI - percentage2*2*Math.PI, true);
+ context.lineTo(x, y);
+ context.closePath();
+ context.stroke();
+ context.fillStyle = "#00FF00";
+ context.fill();
+
+});
+</script>
+{% endblock %}
+
+{% block content%}
+<form method="get" action="career/form">
+    <fieldset>
+	姓名：<input type="text" name="name" value="" />
+	性别：<select>
+	<option value="female">女</option>
+	<option value="male">男</option>
+	</select>
+	地址：<select name="city">
+	    <option value="Beijing">北京</option>
+	    <option value="Tianjin">天津</option>
+	    <option value="Shanghai">上海</option>
+	    <option value="Shenzhen">深圳</option>
+	</select>
+	<select name="District">
+
+	</select>
+    </fieldset>
+</form>
+
+<canvas id="pieChart" width="300px" height="950px">
+</canvas>
+
+{% endblock %}

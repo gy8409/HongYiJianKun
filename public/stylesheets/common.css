@@ -74,6 +74,19 @@ p {
 .modal-body input {
     margin-top: 1em;
 }
+.modal-body img {
+    display: none;
+    background-image: url('../images/loading.gif');
+    width: 30px;
+}
+
+.modal-body #correct {
+    background-position: 0px 0px;
+}
+
+.modal-body #wrong {
+    background-position: -30px 0px;
+}
 
 .navBar {
     position: absolute;
@@ -100,7 +113,7 @@ p {
 .navBar a {
     text-decoration: none;
     color: #e0e4e6;
-    
+
     display: block;
     height: 3em;
     line-height: 3em;
@@ -122,10 +135,10 @@ p {
     padding-bottom: 6em;
 }
 
-.main {    
+.main {
     position: relative;
     height: 100%;
-} 
+}
 
 .footer {
     width:100%;
