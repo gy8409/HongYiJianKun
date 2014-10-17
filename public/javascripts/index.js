@@ -27,7 +27,7 @@ require(["rx", "../javascripts/responsive.js", "../javascripts/signup.js"], func
         });
 
         var mouseMoveStream = Rx.Observable.fromEvent(document, 'mousemove');
-        var left = mouseMoveStream.map(function(e){ return e.pageX; });
+        var left = mouseMoveStream.map(function(e){ return e.pageX + 1; });
         var top = mouseMoveStream.map(function(e){ return e.pageY; })
 
         function setX(x) {
