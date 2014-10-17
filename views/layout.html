@@ -9,7 +9,7 @@
 
 	{% block head %}
 
-	<link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="/stylesheets/common.css" type="text/css" />
 	{% endblock %}
 
@@ -26,13 +26,10 @@
 		    |
 		    <a href="#" data-toggle="modal" data-target="#loginModal" class="btn btn-link">登录</a>
 		</div>
-		<!-- signup modal -->
-		{% include 'signup.html' %}
-		<!-- end of signup modal -->
 
-		<!-- login modal -->
+		{% include 'signup.html' %}
+
 		{% include 'login.html'  %}
-		<!-- end of login modal -->
 
 		<ul class="navBar">
 		    <li><a>&nbsp;</a></li>
@@ -65,16 +62,8 @@
 	</div>
 
 	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.js"></script>
-	<script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.js"></script>
 
-	<script>
-	 $(document).ready(function (){
-	     $('#signin').click(function (){
-		 $('.modal').modal('hide');
-	     });
-	 });
-
-	</script>
 	{%  block script %} {% endblock %}
     </body>
 </html>

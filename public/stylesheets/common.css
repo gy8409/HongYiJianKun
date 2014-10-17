@@ -45,7 +45,8 @@ p {
 }
 
 .wrapper {
-    min-height: 100%;
+    min-he
+ight: 100%;
     position: relative;
 }
 
@@ -71,21 +72,9 @@ p {
     right: 2em;
 }
 
-.modal-body input {
-    margin-top: 1em;
-}
-.modal-body img {
-    display: none;
-    background-image: url('../images/loading.gif');
-    width: 30px;
-}
-
-.modal-body #correct {
-    background-position: 0px 0px;
-}
-
-.modal-body #wrong {
-    background-position: -30px 0px;
+/* for "忘记密码" */
+.modal-body .col-sm-4 {
+    padding-top: 7px;
 }
 
 .navBar {

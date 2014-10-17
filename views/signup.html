@@ -1,6 +1,6 @@
 <!-- signup modal -->
 <div class="modal fade" id="signupModal" role="dialog" aria-labelledby="smodalLabel" aria-hidden="true">
-    <form class="form-group" action="/signup" method="post">
+    <form class="form-group form-horizontal" action="/signup" method="post">
 	<div class="modal-dialog">
 	    <div class="modal-content">
 		<div class="modal-header">
@@ -8,10 +8,34 @@
 		    <h4 class="modalTitle" id="smodalLabel">注册</h4>
 		</div>
 		<div class="modal-body">
-		    <input type="text" name="username" class="form-control" placeholder="用户名" require /><span><img id="userCheck" src="../images/loading.gif"></img></span>
-		    <input type="text" name="email" class="form-control" placeholder="邮箱" />
-		    <input type="password" name="password" class="form-control" placeholder="密码" />
-		    <input type="password" class="form-control" placeholder="再次输入密码" />
+		    <div class="form-group has-feedback">
+			<label class="control-label col-sm-2" for="username">用户名</label>
+			<div class="col-sm-9">
+			    <input type="text" name="username" class="form-control" placeholder="请输入3~20位字母、数字、点或空格" />
+			    <span class="glyphicon form-control-feedback"></span>
+			</div>
+		    </div>
+		    <div class="form-group has-feedback">
+			<label class="control-label col-sm-2" for="email">邮箱</label>
+			<div class="col-sm-9">
+			    <input type="text" name="email" class="form-control" />
+			    <span class="glyphicon form-control-feedback"></span>
+			</div>
+		    </div>
+		    <div class="form-group has-feedback">
+			<label class="control-label col-sm-2" for="password">密码</label>
+			<div class="col-sm-9">
+			    <input type="password" name="password" class="form-control" />
+			    <span class="glyphicon form-control-feedback"></span>
+			</div>
+		    </div>
+		    <div class="form-group has-feedback">
+			<label class="control-label col-sm-2" for="repassword">再次输入密码</label>
+			<div class="col-sm-9">
+			    <input type="password" name="repassword" class="form-control" />
+			    <span class="glyphicon form-control-feedback"></span>
+			</div>
+		    </div>
 		</div>
 		<div class="modal-footer">
 		    <button id="signup" type="submit" class="btn btn-default">注册</button>

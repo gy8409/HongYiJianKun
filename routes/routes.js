@@ -72,11 +72,10 @@ module.exports = {
 
 	user.getByName(data, function(err, user){
 	    if (err) {
-		console.log("Username ok.");
+		console.log("Username ok. %s");
 		res.send("");
 	    } else {
-		console.log("Username has been taken.");
-
+		console.log("Username has been taken. err: %s, user: %s", err, user);
 		res.send("Username has been taken.");
 	    }
 	    /* res.error("Username already taken"); */

@@ -73,28 +73,27 @@ User.getByName = function(name, fn) {
 };
 
 User.getId = function(name, fn) {
-	console.log(">>>User.getId fn: %s", fn);
+	console.log(">>>User.getId name: %s, fn: %s", name, fn);
 	db.get("user:id:" + name, fn);
 };
 
 User.get = function(id, fn) {
-	db.hgetall("user:" + id, function(err, user) {
-		console.log(">>>User.get fn: %s", fn);
-		console.dir(user);
-
-		if (err) return fn(err);
-		fn(null, new User(user));
-	});
+    db.hgetall("user:" + id, function(err, user) {
+	// err is always null
+	console.log(">>>User.get err: %s, user: %s", err, user);
+	if (!user) { return fn(true); }
+	fn(false, new User(user));
+    });
 };
 
 User.authenticate = function(name, pass, fn) {
-	User.getByName(name, function(err, user){
-		if (err) return fn(err);
-		if (!user.id) return fn();
-		bcrypt.hash(pass, user.salt, function(err, hash) {
-			if (err) return fn(err);
-			if (hash == user.pass) return fn(null, user);
-			fn();
-		});
+    User.getByName(name, function(err, user){
+	if (err) return fn(err);
+	if (!user.id) return fn();
+	bcrypt.hash(pass, user.salt, function(err, hash) {
+	    if (err) return fn(err);
+	    if (hash == user.pass) return fn(null, user);
+	    fn();
 	});
+    });
 };

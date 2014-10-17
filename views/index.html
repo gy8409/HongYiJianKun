@@ -59,12 +59,16 @@
 	</div>
     </div>
 </div>
+        <div class="mouseTail" id="mouse">弘</div>
+        <div class="mouseTail" id="tail">毅</div>
+        <div class="mouseTail" id="moreTail">健</div>
+        <div class="mouseTail" id="wagging">坤</div>
 {% endblock %}
 
 {% block script %}
 {% parent %}
-
-<script src="../javascripts/responsive.js"></script>
-<script src="../javascripts/index.js"></script>
-<script src="../javascripts/signup.js"></script>
+<script src="../javascripts/require.js" defer async="true"></script>
+<!--<script src="../javascripts/responsive.js"></script>-->
+<script src="../javascripts/require.js" data-main="../javascripts/index.js"></script>
+<!--<script src="../javascripts/signup.js"></script>-->
 {% endblock %}
