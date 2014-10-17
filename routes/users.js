@@ -1,7 +1,8 @@
 var express = require('express');
 var bcrypt = require('bcrypt');
 var redis = require('redis');
-var db = redis.createClient();
+var rtg = require('url').parse(process.env.REDISTOGO_URL);
+var db = redis.createClient(rtg.port, rtg.hostname);
 var router = express.Router();
 
 /* GET users listing. */
