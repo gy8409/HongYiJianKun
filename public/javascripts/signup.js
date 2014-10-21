@@ -81,24 +81,3 @@ $(document).ready(function(){
     });
 });
 
-/* ({
-$("input[name='username']").focusout(function(){
-var that = $(this);
-$.ajax({
-url: '/checkUsername',
-data: { username: $(this).val() },
-success: function(){
-// $("#userCheck").removeClass().attr('src', '../images/loading.gif').show();
-}
-
-}).done(function(data){
-if (data) {
-$('.form-control-feedback').removeClass('glyphicon-ok').addClass('glyphicon-remove').parent().removeClass('has-success').addClass('has-error');
-} else {
-$('.form-control-feedback').removeClass('glyphicon-remove').addClass('glyphicon-ok').parent().removeClass('has-error').addClass('has-success');
-}
-});
-}).focusin(function(){
-$("#userCheck").hide();
-});
-}); */
